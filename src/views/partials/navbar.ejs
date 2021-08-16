@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="/">INICIO</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <%if(user)  {%>
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="/list">Empresas</a>
+                    <a class="nav-item nav-link" href="/add">Agregar</a>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-item nav-link" href="/logout">Logout</a>
+                </div>
+                <% } %>
+                    <% if(!user) {%>
+                        <div class="navbar-nav ml-auto">
+                            <!-- Users control-->
+                            <a class="nav-item nav-link" href="/signin">Login</a>
+                            <a class="nav-item nav-link" href="/signup">Register</a>
+
+                        </div>
+                        <% } %>
+        </div>
+    </div>
+</nav>

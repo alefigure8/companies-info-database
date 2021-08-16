@@ -1,0 +1,69 @@
+<%- layout('layout/main.ejs') %>
+
+    <div class="container">
+        <div class="row my-4">
+            <div class="col-md-5 mx-auto">
+                <div class="card">
+                    <div class="card-header text-center">
+                        AGREGUE UNA NUEVA EMPRESA
+                    </div>
+                    <div class="card-body">
+                        <form action="/add" method="POST">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Empresa" class="form-control" autofocus>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="cuit" placeholder="CUIT" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="url" placeholder="URL" class="form-control">
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="construar" name="construar">
+                                <label class="form-check-label" for="construar">
+                                  ¿Está en ConstruAr?
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="construar_note" name="construar_note">
+                                <label class="form-check-label" for="construar_note">
+                                  ¿Tiene notas en ConstruAr?
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="op_suscript" name="op_suscript">
+                                <label class="form-check-label" for="op_suscript">
+                                  ¿Es suscriptor de ObraPública?
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="op_exsuscript" name="op_exsuscript">
+                                <label class="form-check-label" for="op_exsuscript">
+                                  ¿Fue suscriptor de ObraPública?
+                                </label>
+                            </div>
+                            <hr>
+                            <h5 class="card-title mt-3"> Acciones </h5>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="send_mail" name="send_mail">
+                                <label class="form-check-label" for="send_mail">
+                                  Enviar Mail
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="call" name="call">
+                                <label class="form-check-label" for="call">
+                                  Llamar
+                                </label>
+                            </div>
+                            <div class="form-group mt-3">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    Agregar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

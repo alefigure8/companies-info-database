@@ -1,0 +1,60 @@
+<%- layout('layout/main.ejs') %>
+    <div class="container">
+        <h1 class="text-center mb-4 mx-auto">Listado de empresas</h1>
+
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Empresa</th>
+                    <th scope="col">Cuit</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">ConstruAr</th>
+                    <th scope="col">Notas</th>
+                    <th scope="col">ObraP</th>
+                    <th scope="col">Ex ObraP</th>
+                    <th scope="col">Llamar</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% empresas.forEach(empresa=> {%>
+                    <tr>
+                        <th scope="row" class="align-middle">
+                            <%= empresa.name %>
+                        </th>
+                        <td class="align-middle">
+                            <%= empresa.cuit %>
+                        </td>
+                        <td class="align-middle">
+                            <a href="<%= empresa.url %>" target="_blank">
+                                <%= empresa.url %>
+                            </a>
+                        </td>
+                        <td class="align-middle <%= empresa.construar %> icon text-center">
+                        </td>
+                        <td class="align-middle <%= empresa.construar_note %> icon text-center">
+                        </td>
+                        <td class="align-middle <%= empresa.op_suscript %> icon text-center">
+                        </td>
+                        <td class="align-middle <%= empresa.op_exsuscript %> icon text-center">
+                        </td>
+                        <td class="align-middle <%= empresa.send_mail %> icon text-center">
+                        </td>
+                        <td class="align-middle <%= empresa.call %> icon text-center">
+                        </td>
+                        <td class="align-middle">
+                            <a href="/update/<%= empresa._id %>" class="btn btn-success btn-sm">Editar</a>
+                        </td>
+                        <td class="align-middle">
+                            <form action="/delete/<%= empresa._id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="btn btn-danger btn-sm" _id="<%= empresa._id %>">Borrar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+
+    </div>
