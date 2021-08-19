@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const { options } = require('../routes/form');
 const { Schema } = mongoose;
+const mongoosePaginate = require('mongoose-paginate-v2');
 
 const corpSchema = new Schema({
     name: { type: String, default: 'off' },
@@ -16,6 +16,6 @@ const corpSchema = new Schema({
     timestamps: true
 });
 
-module.exports = mongoose.model('empresa', corpSchema)
+corpSchema.plugin(mongoosePaginate);
 
-//{ type: Boolean, required: true, default: false },
+module.exports = mongoose.model('empresa', corpSchema)

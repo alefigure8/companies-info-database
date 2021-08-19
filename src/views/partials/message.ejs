@@ -1,24 +1,23 @@
 <div class="container">
-    <div class="row">
-        <div class="col-md-4 mx-auto py-5">
-            <% if(error_msg.length > 0){%>
 
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                    <%= error_msg %>
+    <% if(error_msg.length > 0){%>
+
+        <div class="alert-danger w-25 mx-auto my-5 alert fade show alert-dismissible" role="alert">
+            <%= error_msg %>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+
+        </div>
+        <% } %>
+
+            <% if(success.length > 0){%>
+                <div class="alert-success w-25 mx-auto my-5 alert fade show alert-dismissible" role="alert">
+                    <%= success %>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
 <span aria-hidden="true">&times;</span>
 </button>
                 </div>
                 <% } %>
 
-                    <% if(success.length > 0){%>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <%= success %>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-<span aria-hidden="true">&times;</span>
-</button>
-                        </div>
-                        <% } %>
-        </div>
-    </div>
 </div>

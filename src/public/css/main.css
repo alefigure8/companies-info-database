@@ -19,3 +19,7 @@
     font-weight: 900;
     content: "\f00c";
 }
+
+#searchResult {
+    width: 400px;
+}

@@ -19,8 +19,9 @@ app.set('view engine', 'ejs');
 app.set('port', process.env.PORT || 3000);
 
 //Middleswares
-app.use(morgan('dev'))
-app.use(express.urlencoded({ extended: false }))
+app.use(morgan('dev'));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(session({
     secret: passportSession.SECRET,
     resave: false,
